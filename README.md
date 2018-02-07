@@ -29,7 +29,7 @@ These scripts are included in the *index.html* file.
 
  The JavaScript client in Demo I gets real-time bitcoin price updates from a Bitfinex WebSocket server and 
  displays the prices in a chart, as shown in the following graphic:<br><br>
-![Foto of Web page.](web-page-price-update-small.png "The Web page with a chart that updates.")
+![Foto of Web page.](images/web-page-price-update-small.png "The Web page with a chart that updates.")
 
 ## API Implementations
 The JavaScript client implements selected functions from the following APIs:
