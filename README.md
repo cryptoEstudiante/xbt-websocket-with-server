@@ -1,4 +1,4 @@
-# Demo I: Bitcoin Price in Real Time—an Implementation of the HTML 5 WebSocket Interface 
+# Demo <img src='images/i-roman-large.png'>: Bitcoin Price in Real Time—an Implementation of the HTML 5 WebSocket Interface 
 ## A Demo with a <em font-size="14" style= "color:#ff6666;"><b>WebSocket!</b></em> :blush:
 ##### Beta Version 1.0
 ###### This document was first issued on November 1, 2017.
@@ -31,17 +31,26 @@ These scripts are included in the *index.html* file.
  displays the prices in a chart, as shown in the following graphic.<br><br>
 ![Foto of Web page.](images/web-page-price-update-small.png "The Web page with a chart that updates.")
 
-## API Implementations
-The JavaScript client implements selected functions from the following APIs:
 
-  * *HTML 5 WebSocket Interface*: Enables the JavaScript client to open a WebSocket connected to a WebSocket
-        server at BitFinex&mdash;a bitcoin exchange. See the API at
-        https://html.spec.whatwg.org/multipage/web-sockets.html#network
-        
-  * *BitFinex WebSocket API*: Enables the JavaScript client to receive real-time prices from a
-     BitFinex WebSocket server. See the API at https://bitfinex.readme.io/v2/docs/ws-general
+## Known Issues
+This section provides information about known issues in Beta Version 1.
+
+* **Insufficient Testing of the Client across the Spectrum of Mobile Device Sizes and Platforms.**
+
+     * The CSS file of the client uses proportional sizing of Document Object Model (DOM) elements
+       in rem units and Media queries to adapt the content to smaller viewport sizes (320px-768px in width). 
+       However, this code was not tested with all possible viewport sizes.
          
-  * *Highcharts API*: Enables the JavaScript client to draw and update a spline chart with bitcoin prices. 
-         See the API at https://api.highcharts.com/highcharts/
+     * The client was not tested with all browsers for the iOS, Windows Mobile, and Android Platforms.
+       There are about 25 different browsers. Many of the browsers use the same browser engine, such as
+       WebKit. However, no attempt was made to categorize which browsers use the same engine to determine
+       the extent of test coverage across browsers. The client was tested with the following browsers:
+       Opera, Internet Explorer, Edge, Chrome, Firefox, Konqueror, and Clicz.
+ 
+* **The Client Freezes when Run with Konqueror.**
+    The client does not draw the Web page chart. It is not clear whether the script is even loading.
+    
+ 
 
-
+    
+  
