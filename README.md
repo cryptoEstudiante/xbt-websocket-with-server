@@ -26,8 +26,8 @@ These scripts are included in the *index.html* file.
 
 ## Functionality
 
- The JavaScript client gets real-time bitcoin prices from a Bitfinex WebSocket server and 
- displays the prices in a chart, as shown in the following graphic.<br><br>
+ As shown in the graphic that follows, the JavaScript client gets real-time bitcoin prices from a
+ Bitfinex WebSocket server and displays the prices in a chart.<br><br>
 ![Foto of Web page.](images/web-page-price-update-small.png "The Web page with a chart that updates.")
 
 
