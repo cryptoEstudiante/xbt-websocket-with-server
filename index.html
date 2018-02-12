@@ -23,28 +23,6 @@
             enable JavaScript. </p>
       </div>
       </noscript>
-
-    <!-- COMMENT Reference View: Following is the BOX MODEL that appears under the
-    preceding title bar layout with CSS id of m-title-div-w-border
-  body
-       div "wrap-centered-content" **main centered container 100% of width
-          aside         **left aligned column of small text
-            m-table
-               price table
-            m-table
-            container-Chart
-               chart
-            container-Chart
-          aside             end left-most column-keep this a FIXED PIXEL WIDTH
-       div id="m-container-text" **larger column of content to right-PERCENT WIDTH
-       div m-container-text
-   div //end wrapped centered content ***main centered container
-    div id="m-footer"
-           <p id="m-footer-p"></p>
-       div
-    </body-->
-
-    <!--// LOGO AND MENU...-->
     <div class="m-title-div-w-border">
         <img src="images/BC_Logo_.png" alt="" style="width:35px;height:35px;">
         Demo <span class="m-i-serif-type-letter-sized">I</span>: Bitcoin
@@ -101,16 +79,14 @@
        <div class="m-container-text">
        <br>
      <p id="m-h4"><em>A Demo with a</em> <em style="color:#ff6666;">WebSocket!</em>
-     <!--a style="color:#f7f5e6" tabindex="3" onMouseOver="return change_ImageInTitle()" onMouseOut="return change_ImageInTitleBack()" onclick="window.open('ws.html','','scrollbars=yes,titlebar=no,menubar=no,toolbar=yes,width=700,height=600,resizable=yes,location=no,status=no')"><em style="color:#ff6666;">WebSocket!</em>
-     <img src="=Popicon_1.gif" alt="" id="Popscicle" height="20" width="20"></a-->
      <br><br>
       <!--[if IE lte 9]><br><br><p style="background-color:#c0b3a0;color:blue;padding:.94rem;">
       The Web page cannot be
     displayed in your browser. Upgrade your browser to the recent Chrome,
     Internet Explorer, Opera, Firefox or Safari. Thanks!</p><br><br><![endif]-->
      <div class="m-p">The programming demo consists of the Web page you are viewing and the 
-        JavaScript client that informs the Web page. I programmed the client to create a <i>WebSocket</i> connected to
-        <a class="my-link" tabindex="4" href="#" onclick="window.open('http://www.bitfinex.com/','_blank')">BitFinex</a>, a
+        JavaScript client that informs the Web page. I programmed the JavaScript client to create a <i>WebSocket</i> 
+        connected to <a class="my-link" tabindex="4" href="#" onclick="window.open('http://www.bitfinex.com/','_blank')">BitFinex</a>, a
         bitcoin exchange that offers real-time bitcoin price data to subscribers.<br><br>
         The <i>WebSocket</i> enables simultaneous communication between the BitFinex <i>WebSocket</i> server and
         the JavaScript client. A message received at the network layer is represented 
@@ -118,13 +94,11 @@
         <b>Activity at the WebSocket</b> indicates
         incoming and outgoing events at the <i>WebSocket</i> of the JavaScript client.         
         <br><br>
-        </div> <!-- END M-CONTAINER TEXT-->
-        </div><!--END wrapper centered-->
+        </div> <!-- end div-->
+        </div><!--container text-->
+        </div>
         <br><br>
         <hr>
-        <footer class="m-footer-p">
-       
-        </footer>
  <script type="text/javascript" src="js-client-socket.js">
  </script>
 </body>
