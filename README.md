@@ -7,16 +7,15 @@
 WebSockets are cool because they enable servers to push data to clients
 without the client pull that HTTP GET requests require.
 
-The sections that follow describe the source code files, functionality, and API implementations
-of the JavaScript client.   
+The sections that follow describe the source code files, functionality, and known issues of the demo.   
 
 ## Source Code Files
 
 The *js-client-socket.js* file contains the JavaScript client.
-The CSS folder contains the Cascading Style Sheets, level 2 (CSS2) file.
+The CSS folder contains the Cascading Style Sheets, level 3 (CSS3) file.
 
 ### Required Scripts
-The client requires the following scripts to run:
+The JavaScript client requires the following scripts to run:
 
 * highcharts.js: The client uses the  [Highcharts API]('https://www.highcharts.com/') to
     create the chart on the Web page of the demo.
@@ -27,30 +26,30 @@ These scripts are included in the *index.html* file.
 
 ## Functionality
 
- The JavaScript client in Demo I gets real-time bitcoin price updates from a Bitfinex WebSocket server and 
+ The JavaScript client gets real-time bitcoin prices from a Bitfinex WebSocket server and 
  displays the prices in a chart, as shown in the following graphic.<br><br>
 ![Foto of Web page.](images/web-page-price-update-small.png "The Web page with a chart that updates.")
 
 
 ## Known Issues
-This section provides information about known issues in Beta Version 1.
+This section provides information about known issues in Beta Version 1 of the demo.
 
-* **Insufficient Testing of the Client across the Spectrum of Mobile Device Sizes and Platforms.**
+* **Insufficient Testing of the JavaScript Client with Small Viewports**
 
-     * The CSS file of the client uses proportional sizing of Document Object Model (DOM) elements
-       in rem units and Media queries to adapt the content to smaller viewport sizes (320px-768px in width). 
-       However, this code was not tested with all possible viewport sizes.
-         
-     * The client was not tested with all browsers for the iOS, Windows Mobile, and Android Platforms.
-       There are about 25 different browsers. Many of the browsers use the same browser engine, such as
-       WebKit. However, no attempt was made to categorize which browsers use the same engine to determine
-       the extent of test coverage across browsers. The client was tested with the following browsers:
-       Opera, Internet Explorer, Edge, Chrome, Firefox, Konqueror, and Clicz.
- 
-* **The Client Freezes when Run with Konqueror.**
-    The client does not draw the Web page chart. It is not clear whether the script is even loading.
-    
- 
+   * Code in the CSS3 file proportionally sizes the font and Document Object Model (DOM) elements  
+     in rem units. Media queries in the CSS3 file style Web page elements. However, this CSS3 code was 
+     not tested extensively with small viewports (less than 768 pixels in width).
+  
+* **No Testing of the JavaScript Client on the iOS Mobile Operating System** 
+
+   * The client was only tested with Safari on an OS X operating system.
+
+* **The JavaScript Client Freezes when Run with Konqueror, a Linux Browser**
+
+   * The Javascript client does not draw the Web page chart. It is not clear whether the script is even loading.
+
+
+
 
     
   
