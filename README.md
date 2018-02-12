@@ -11,8 +11,8 @@ The sections that follow describe the source code files, functionality, and know
 
 ## Source Code Files
 
-The *js-client-socket.js* file contains the JavaScript client.
-The CSS folder contains the Cascading Style Sheets, level 3 (CSS3) file.
+The *js-client-socket.js* file contains the source code of the JavaScript client.
+The Cascading Style Sheets, level 3 (CSS3) file is located in the css folder.
 
 ### Required Scripts
 The JavaScript client requires the following scripts to run:
