@@ -1,423 +1,307 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*SOCKETS PROJECT!*/
-/*
-    Created on :  11/01/2017, 10:14:04 AM
-*/
-/*This CSS file uses rem units for proportional sizing of
-the font, and for most of the elements. The Javascript code stops
-the demo from running if the viewport width is less 450 pixels,
-which is not enough room for the page to display a chart.
-The chart is one of the main features of the demo.
-The average smart phone size is about 480 pixels wide.
-That is where I break the content using a media query.
-I break from two columns to one column with all elements
-vertically stacked.*/
-
-/* The next element defines the base font size.       */
-/* Some systems have a default of 12px.               */
-/* Put all systems on the same base to start          */
-/* And we adjust this base size for entire scope when */
-/* we get to smart phone width at about 480 pix in width*/
 html {
-    /*  overflow-y: scroll;  test force vertical scrollbar */
-    /*overflow: When content is too large to fit in its block-level*/ 
-    /*(element on new line e.g, a paragraph instead of an anchor) container.*/
-    /*overflow: hidden; Content is clipped */
-    /*overflow: scroll; Content is clipped, with scrollbars */
-    font-size:16px;  /*font-size 100% or 62.5%*/
+font-size:16px
 }
+
 .offset {
-    margin: 0 0 0 0;
-    height: 100px;
+margin:0;
+height:100px
 }
-/*Basic colors: ltgreybl #c3c3c3, scrub#c0b3a0, fresh-#f7f5e6;*/
+
 .alert-stop-demo {
-    box-sizing: border-box;
-    padding: .94rem;
-    border: .0625rem solid #d6e9c6;
-    border-radius: .25rem;
-    color: black;
-    background-color: #c0b3a0;
+box-sizing:border-box;
+padding:.94rem;
+border:.0625rem solid #d6e9c6;
+border-radius:.25rem;
+color:black;
+background-color:#c0b3a0
 }
+
 a.my-link:link {
-    color: #ffffff
-    /*lightblue #CC0000;*/
+color:#ffffff
 }
-/*visited links have a non-bright color*/
+
 a.my-link:visited {
-    color: #c3c3c3;
-    text-decoration: underline
+color:#c3c3c3;
+text-decoration:underline
 }
+
 a.my-link:hover {
-    color: #ff6666;
-    cursor: pointer;
-    text-decoration: underline
+color:#ff6666;
+cursor:pointer;
+text-decoration:underline
 }
-/*Main container under title bar that holds the
-aside container (for the activity box and chart)
-on the left, and the text content container for the text on
-the right.*/
+
 .wrap-centered-content {
-    width: 100%;
-    /*height: 100%;*/
-    /*height:1500px; test force scroll bars in small device*/
-    margin: 0 auto;
+width:100%;
+margin:0 auto
 }
-/* Main title bar-sits alone on top of the
-wrap-centered-content container that
-spans 100%, and contains all the the other
-elements of the page, chart, text divs, and so on. */
+
 .m-title-div-w-border {
-    width: 100%;
-    float: left;
-    display: block;
-    box-sizing: border-box;
-    padding: .625rem;
-    min-height: 4.68rem;
-    font-size: 2rem;
-    font-family: monospace;
-    border: .125rem solid white;
-    background-color: #22252c;
+width:100%;
+float:left;
+display:block;
+box-sizing:border-box;
+padding:.625rem;
+min-height:4.68rem;
+font-size:2rem;
+font-family:monospace;
+border:.125rem solid white;
+background-color:#22252c
 }
-/* serif font for roman numeral */
+
 .m-i-serif-type-letter-sized {
-    font-family: serif;
-    font-size:1.75rem;
+font-family:serif;
+font-size:1.75rem
 }
-/* Typically, around 768px the device     */
-/* is a tablet, such as an IPad.          */
-/* If less than 800px, do not display the */
-/* endDemo button.                        */
+
 @media (max-width: 800px) {
-    .offset {
-      display:none;
-    }
+.offset {
+display:none
+}
 }
 
-/*The media queries are at 800, 600, and 400 */
-
-/* At 400px 1) stop display of the chart*/
-/* -area is too small & the two         */
-/* placeholder panels below it.         */
-/* and 2)decrease the size of the       */
-/* "developing the demo" drop-down      */
-/* panel.                               */
-/* 3) Do not display the static         */
-/* message: "Activity at the WebSocket" */
-/* -area is too small                   */
 @media all and (max-width: 400px) {
-    #container_Chart {
-       display: none;
-   }
-   .panel-aside-left { /* placeholder panel below chart*/
-       display: none;
-   }
-   .flip-aside-left {  /* placeholder panel below chart*/
-       display: none; 
-   }
-    #panel {     
-      display: none;  /* developing demo panel*/
-    }
-    #flip {
-      display: none; /* developing demo panel*/
-    }
-      /*.m-Table {
-      /*table-layout: auto;*/
-      /*min-width: 15rem;
-    /*}*/
-    .m-Table  { 
-        display: block; 
-    }
-     #m-TableCell1{
-        /*width:3rem; */
-        font-size: .75rem;
-        display: block; 
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-     #m-TableCell1-Status {
-        width:3rem; 
-        font-size: 1.0rem;
-    }
-    #m-TableCell-Heart {
-        /*width:3rem;*/
-        font-size: 1.0rem;
-        display: block;
-    }
-  }  
-  
-/*Following is the big view of the main page:
-The title bar id is #m-title-div-w-border that
-spans the top of the page. 
-Under the #m-title-div-w-border,
-I have a 100% wrap-centered-content container that contains
-1) A left div at % (id=aside) that is float left
-2) A right div at% (id=container-text) that is block or inline-block
-*/
-/* m-container-text is the Main container of text,
-  when the window is > X px, this container is the right column.*/
-.m-container-text {
-    width: 45%;
-    min-width: 30%;
-    /*margin top right bottom left*/
-    margin-right: 2%;
-    margin-left: 10%;
-    display: inline-block;
-    background-color: #22252c;
-}
-/* Typically, around 768px the device  */
-/* is a tablet, such as an IPad.       */
-@media (max-width: 800px) {
-    .m-container-text {
-        width: 80%;
-    }
+#container_Chart {
+display:none
 }
 
-/*The aside element contains the activity box for WebSocket,
-and chart. When window width is >450px, this
-div is in the top-left of window.
-INSIDE THIS ELEMENT ARE THE FOLLWING
-elements that are STACKED VERTICALLY:
-1) m-table (width: 300px),
-2) container_Chart (width: 300px)-not
-                    in .css file, only index.html
-3) flip-aside-left (a sliding panel with width: 325px
-that is present but visible. The panel helps to position the
-"End Demo" button below it.)
-*/
-.aside {
-    width: 40%;
-    height: 100%;
-    /*border: .625rem solid #3f3250; for test */
-    background-color: #22252c;
-    float: left;
-}
-
-/* About 320px-480 the device changes from */
-/* tablet, to smartphone.                   */    
-/* Drop-down panel "Developing the Demo"   */  
-/* located top-right of window in m-title-div-w-border div.*/  
-/* The JavaScript code explicitely addresses them by Id*/  
-/* to move the panel up and down. */
-#panel,
-#flip {
-    box-sizing: border-box;
-    padding: .125rem;
-    float: right;
-    width: 10rem;
-    background-color: #3f3250;
-    border: .0625rem solid #c3c3c3;
-    font-size: 1.0rem;
-    /*margin top right bottom left*/
-}
-#panel {
-    border: .0625rem solid #c3c3c3;
-    box-sizing: border-box;
-    padding: .3125rem;
-    font-size: 1.0rem;
-    width: 34rem;
-    float: right;
-    display: none;
-    background-color: #22252c;
-    margin: 0 0 0 0;
-}
-/* Make the width of the slide-out 
-panel smaller when the viewport shrinks*/
-@media (max-width: 650px) {
-    #panel { 
-        width: 20rem;
-    }
-    .m-title-div-w-border {
-       font-size: 1.5rem;  /* title bar*/
-    }
-    .m-i-serif-type-letter-sized { /* Roman numeral for Demo I*/
-        font-size: 1.125rem;
-    }
-     #m-h4{
-         font-size: .75rem; /*drop size of Subtitle..."with a WebSocket"*/
-         /*This element is dynamically appended with a div in func. endDemo"*/
-         /* This element must remain with selector id, and not become a class */
-    }
-}
-/* Next two elements are the sliding panel
-under the chart.*/
-.panel-aside-left,
-.flip-aside-left {
-    box-sizing: border-box;
-    padding: .125rem;
-    text-align: center;
-    margin: 8.5rem 0 0 0;
-    background-color: #22252c;
-    font-size: 1rem;
-}
 .panel-aside-left {
-    padding: .3125rem;
-    text-align: left;
-    background-color: #22252c;
-    display: none;
-    margin: 0 0 0 0;
-    font-size: 1rem;
-}
-/*Release Notes page*/
-.m-container-text-100-percent-serif {
-    width: 65%;
-    box-sizing: border-box;
-    padding: 3%;
-    /*margin: top right bottom left*/
-    margin: 0 10% 0 10%;
-    display: inline-block;
-    /*font-size: 1rem;*/
-    font-family: Georgia, serif;
-    background-color: #22252c;
-}
-/* Paragraph tag */
-.m-p {
-    display: block;
-}
-/*Following are custom headings:*/
-/*STOP! The id that follows is used for the
-dynamic append div alert in endDemo. It
-must remain unique and not become a class!*/
-/*Sub-header in article*/
-#m-h4 {
-    color:#ffffff;
-    font-size: 1.75rem;
-    display: inline;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-   "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-   sans-serif;
-}
-/*Sub-header in article*/
-.m-h5 {
-    color:#ffffff;
-    font-size: 1.5rem;
-    display: inline;
-    font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-}
-/* by-line */
-.m-i-by {
-    /*font-size: smaller;*/
-    color: #000000;
-}
-.clear {
-    clear: both;
+display:none
 }
 
-/*Other colors:  ltgreybl #c3c3c3, scrub#c0b3a0, fresh-#f7f5e6;
- #c0b3a0 lavender, #52658f too dark, purple#333a56,  coral #ff6666;*/
-
-.m-hWelcome {
-    color: #f7f5e6;
-    font-size: 1.125rem;
-    font-family: Georgia, serif;
-    font-weight: bold;
+.flip-aside-left {
+display:none
 }
-/************ start table *****************/
-/* ?size fix 2 rows float left*/
-/* ?two columns are fixed & 1 that floats right */
-/* align not supp in HTML5, use style.textAlign */
+
+#panel {
+display:none
+}
+
+#flip {
+display:none
+}
 
 .m-Table {
-    box-sizing: border-box;
-    border: .625rem solid #3f3250;
-    display: block;
-    width:70%; /*325px; 21rem*/
-    min-width:25rem; /*400px;*/
-    table-layout: fixed;
-    background-color: #333a56;
-    float: left;
-    /*Horiz Vert sets space bet adjacent cells*/
-    border-spacing: .4375rem .50rem; /*7px 8px;*/
-    margin-left: 0;
+display:block
 }
-/*Using ids for some of the table cells because the JavaScript
-dynamically updates them--and its easier to specify them with an id*/
+
 #m-TableCell1 {
-    color: white;
-    width:2.1875; /*35px;*/
-    height:1.5rem; /*24px;*/
-    box-sizing:border-box;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    display:table-cell;
-    padding:3px;
+font-size:.75rem;
+display:block;
+position:absolute;
+top:-9999px;
+left:-9999px
 }
-#m-TableCell-Heart {
-    height:1.5rem; /*24px;*/
-    color:#ffffff;
-    display:table-cell;
-    text-align:left;
-}
-/* In activity box, displays status at the socket, or the price */
+
 #m-TableCell1-Status {
-    box-sizing: border-box;
-    /*font-family: monospace; not available*/
-    width:9.37rem; /*150px;*/
-    height:1.5rem; /*24px;*/
-    word-wrap: break-word;
-    text-overflow: clip;
-    display: table-cell;
-    padding: 3px;
-    color: #ff6666;
+width:3rem;
+font-size:1rem
 }
-/* This one floats right, the other cell floats left */
-/* Width is not Fixed! Not used in two-column table. */
-/* Not used. Maintained for continuity.              */
+
+#m-TableCell-Heart {
+font-size:1rem;
+display:block
+}
+}
+
+.m-container-text {
+width:45%;
+min-width:30%;
+margin-right:2%;
+margin-left:10%;
+display:inline-block;
+background-color:#22252c
+}
+
+@media (max-width: 800px) {
+.m-container-text {
+width:80%
+}
+}
+
+.aside {
+width:40%;
+height:100%;
+background-color:#22252c;
+float:left
+}
+
+#panel,#flip {
+box-sizing:border-box;
+padding:.125rem;
+float:right;
+width:10rem;
+background-color:#3f3250;
+border:.0625rem solid #c3c3c3;
+font-size:1rem
+}
+
+#panel {
+border:.0625rem solid #c3c3c3;
+box-sizing:border-box;
+padding:.3125rem;
+font-size:1rem;
+width:34rem;
+float:right;
+display:none;
+background-color:#22252c;
+margin:0
+}
+
+@media (max-width: 650px) {
+#panel {
+width:20rem
+}
+
+.m-title-div-w-border {
+font-size:1.5rem
+}
+
+.m-i-serif-type-letter-sized {
+font-size:1.125rem
+}
+
+#m-h4 {
+font-size:.75rem
+}
+}
+
+.panel-aside-left,.flip-aside-left {
+box-sizing:border-box;
+padding:.125rem;
+text-align:center;
+margin:8.5rem 0 0;
+background-color:#22252c;
+font-size:1rem
+}
+
+.panel-aside-left {
+padding:.3125rem;
+text-align:left;
+background-color:#22252c;
+display:none;
+margin:0;
+font-size:1rem
+}
+
+.m-container-text-100-percent-serif {
+width:65%;
+box-sizing:border-box;
+padding:3%;
+margin:0 10%;
+display:inline-block;
+font-family:Georgia,serif;
+background-color:#22252c
+}
+
+.m-p {
+display:block
+}
+
+#m-h4 {
+color:#ffffff;
+font-size:1.75rem;
+display:inline;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif
+}
+
+.m-h5 {
+color:#ffffff;
+font-size:1.5rem;
+display:inline;
+font-weight:bold;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif
+}
+
+.m-i-by {
+color:#000000
+}
+
+.clear {
+clear:both
+}
+
+.m-hWelcome {
+color:#f7f5e6;
+font-size:1.125rem;
+font-family:Georgia,serif;
+font-weight:bold
+}
+
+.m-Table {
+box-sizing:border-box;
+border:.625rem solid #3f3250;
+display:block;
+width:70%;
+min-width:25rem;
+table-layout:fixed;
+background-color:#333a56;
+float:left;
+border-spacing:.4375rem .5rem;
+margin-left:0
+}
+
+#m-TableCell1 {
+color:white;
+width:2.1875rem;
+height:1.5rem;
+box-sizing:border-box;
+text-overflow:ellipsis;
+white-space:nowrap;
+display:table-cell;
+padding:3px
+}
+
+#m-TableCell-Heart {
+height:1.5rem;
+color:#ffffff;
+display:table-cell;
+text-align:left
+}
+
+#m-TableCell1-Status {
+box-sizing:border-box;
+width:9.37rem;
+height:1.5rem;
+word-wrap:break-word;
+text-overflow:clip;
+display:table-cell;
+padding:3px;
+color:#ff6666
+}
+
 .TableCell {
-    box-sizing: border-box;
-    height:1.5rem; /*24px;*/
-    width:2.25rem; /*36px;*/
-    padding:3px;
-    display:table-cell;
-    font-weight:bold;
+box-sizing:border-box;
+height:1.5rem;
+width:2.25rem;
+padding:3px;
+display:table-cell;
+font-weight:bold
 }
-/*table-header-group*/
 
 .m-TableRowGroup {
-    display: table-row-group;
+display:table-row-group
 }
-.m-footer-p {
-    text-align: center;
-    font-size: 1rem;
-    background-color: #22252c;
-    padding: 0;
-    margin: 0 0 0 0;
-}
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-   "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-   "Droid Sans", "Helvetica Neue", sans-serif;
-    background-color: #22252c;
-    font-size: 1rem;
-    color: #ffffff;
-    text-size-adjust: none;
-    /*.adjust { font-size-adjust:0.455; }*/
-    /*.adjust {webkit-text-size-adjust:none;*/
-      /*        text-size-adjust:none;*/
-      /*        font-size-adjust:none;*/
-             /*-webkit-text-size-adjust*/
-      /*  ms-text-size-adjust:none;*/
-      /*  moz-text-size-adjust:none;*/
-      /*  text-size-adjust:none;*/
-    /*}*/
-}/* end body */
 
-/*a.ex5:visited, a.ex5:link {text-decoration: none;}
-a.ex1:hover, a.ex1:active {color: red;}
-*/
+.m-footer-p {
+text-align:center;
+font-size:1rem;
+background-color:#22252c;
+padding:0;
+margin:0
+}
+
+body {
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+background-color:#22252c;
+font-size:1rem;
+color:#ffffff;
+text-size-adjust:none
+}
 
 hr {
-    display: block;
-    /*margin: top right bottom left;*/
-    margin:  0.5em auto 0.5em auto;
-    border-style: inset;
-    border-width: 1px;
+display:block;
+margin:.5em auto;
+border-style:inset;
+border-width:1px
 }
