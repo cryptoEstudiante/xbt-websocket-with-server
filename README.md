@@ -1,5 +1,4 @@
 # A Demo: Bitcoin Price in Real Time—an Implementation of the HTML 5 WebSocket Interface 
-## A Demo with a <em font-size="14" style= "color:#ff6666;"><b>WebSocket!</b></em> :blush:
 ##### Beta Version 1.0
 ###### This document was first issued on November 1, 2017.
  
