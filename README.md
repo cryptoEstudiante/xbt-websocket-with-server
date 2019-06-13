@@ -3,7 +3,7 @@
 ###### This document was first issued on November 1, 2017.
  
 ## Introduction to the Demo
-The demo was built to show proficiency in software development. The sections that follow describe the
+I built the demo to show some proficiency in programming with WebSockets. The sections that follow describe the
 functionality, source code files, and script dependencies of the demo.   
 
 ## Functionality
